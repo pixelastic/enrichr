@@ -127,6 +127,9 @@ function bumpVersion(newVersion, cb) {
 }
 
 function commitNewFiles(version) {
+  shell.echo('Transpiling to ES2015')
+  shell.exec('npm run build');
+
   shell.echo('Commiting files');
   const changelog = shell
     .exec('conventional-changelog -u -n scripts/conventional-changelog/', {
