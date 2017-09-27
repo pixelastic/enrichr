@@ -1,6 +1,6 @@
 {
   "name": "enrichr",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Utility belt to enrich Algolia records",
   "main": "src/index.js",
   "repository": "git@github.com:pixelastuc/enrichr.git",
