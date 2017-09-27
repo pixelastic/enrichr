@@ -115,11 +115,6 @@ function promptVersion(currentVersion, cb) {
 
 function bumpVersion(newVersion, cb) {
   shell.echo('Updating version files');
-  shell.echo('./src/_version.scss');
-
-  const versionFile = path.join(__dirname, '../src/_version.scss');
-  const newContent = `/*! tachyons-algolia.css v${newVersion} | MIT License | github.com/algolia/tachyons-algolia */`;
-  fs.writeFileSync(versionFile, newContent);
 
   shell.echo('./package.json');
   mversion.update(newVersion, err => {
@@ -132,9 +127,6 @@ function bumpVersion(newVersion, cb) {
 }
 
 function commitNewFiles(version) {
-  shell.echo('Building new .css files');
-  shell.exec('npm run build');
-
   shell.echo('Commiting files');
   const changelog = shell
     .exec('conventional-changelog -u -n scripts/conventional-changelog/', {
