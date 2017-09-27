@@ -1,0 +1,39 @@
+{
+  "name": "enrichr",
+  "version": "0.0.1",
+  "description": "Utility belt to enrich Algolia records",
+  "main": "src/index.js",
+  "repository": "git@github.com:pixelastuc/enrichr.git",
+  "author": "Pixelastic <tim@pixelastic.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "./scripts/lint",
+    "release": "./scripts/release"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "colors": "^1.1.2",
+    "eslint": "^4.7.2",
+    "eslint-config-algolia": "^12.0.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-jest": "^21.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "mversion": "^1.10.1",
+    "prettier": "^1.7.1",
+    "prompt": "^1.0.0",
+    "semver": "^5.4.1",
+    "shelljs": "^0.7.8"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "cheerio": "^1.0.0-rc.2",
+    "open-graph": "^0.2.3",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
