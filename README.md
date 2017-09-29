@@ -35,3 +35,22 @@ Example:
      height: '500' } }
 ```
 
+### twitterPicture
+
+Takes a twitter account name as input, and will resolve with the url of profile
+picture
+
+Example:
+
+```javascript
+enrichr.twitter('dotcss').then(url => {
+  // https://pbs.twimg.com/profile_images/659732196496928768/ByIcwqVt.png
+});
+```
+
+## TODO
+
+- Get share count from https://my.donreach.com/
+- Get number of followers on Twitter
+- Get first Google Image result for keyword
+- Get screenshot of website
