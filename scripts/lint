@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 set -e
 
-eslint ./src/*.js
+eslint ./index.js ./src/*.js
 
