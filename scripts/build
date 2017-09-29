@@ -2,7 +2,7 @@
 set -e
 
 mkdir -p ./dist
-babel ./src \
+babel ./src/index.js \
   --out-dir ./dist \
   --ignore "./node_modules" \
 
