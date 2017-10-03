@@ -1,6 +1,5 @@
 import enrichr from './src';
 
-const url = 'https://www.algolia.com/';
-enrichr.opengraph(url).then(data => {
+enrichr.geolocation('London, UK').then(data => {
   console.info(data);
 });
