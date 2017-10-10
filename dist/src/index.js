@@ -16,21 +16,14 @@ var _requestPromise = require('request-promise');
 
 var _requestPromise2 = _interopRequireDefault(_requestPromise);
 
-var _algoliasearch = require('algoliasearch');
+var _geolocation = require('./geolocation/geolocation.js');
 
-var _algoliasearch2 = _interopRequireDefault(_algoliasearch);
+var _geolocation2 = _interopRequireDefault(_geolocation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _module = {
   places: null,
-  initPlaces: function initPlaces() {
-    if (_module.places) {
-      return _module.places;
-    }
-    return _module.places = _algoliasearch2.default.initPlaces();
-  },
-
   // Given an url, will resolve an object of opengraph values
   opengraph: function opengraph(url) {
     return _bluebird2.default.promisify(_openGraph2.default)(url);
@@ -46,10 +39,8 @@ var _module = {
       return data.request.href;
     });
   },
-  geolocation: function geolocation(address) {
-    return _module.initPlaces().search(address, { type: 'city' }).then(function (results) {
-      return results.hits[0]._geoloc;
-    });
+  cityCoordinates: function cityCoordinates(cityAddress) {
+    return _geolocation2.default.getCityCoordinates(cityAddress);
   }
 };
 exports.default = _module;
