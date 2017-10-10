@@ -1,16 +1,10 @@
 import opengraph from 'open-graph';
 import Promise from 'bluebird';
 import request from 'request-promise';
-import algoliasearch from 'algoliasearch';
+import geolocation from './geolocation/geolocation.js';
 
 const module = {
   places: null,
-  initPlaces() {
-    if (module.places) {
-      return module.places;
-    }
-    return (module.places = algoliasearch.initPlaces());
-  },
   // Given an url, will resolve an object of opengraph values
   opengraph(url) {
     return Promise.promisify(opengraph)(url);
@@ -23,11 +17,8 @@ const module = {
       resolveWithFullResponse: true,
     }).then(data => data.request.href);
   },
-  geolocation(address) {
-    return module
-      .initPlaces()
-      .search(address, { type: 'city' })
-      .then(results => results.hits[0]._geoloc);
+  cityCoordinates(cityAddress) {
+    return geolocation.getCityCoordinates(cityAddress);
   },
 };
 export default module;
