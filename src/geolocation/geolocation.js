@@ -19,15 +19,15 @@ const module = {
   /**
    * Resolves to the lat/lng coordinates of the city passed.
    *
-   * @param {String} address Any string is accepted, but the "City, Country"
+   * @param {String} cityAddress Any string is accepted, but the "City, Country"
    * form is recommended
    * @returns {Promise.<Object>} Object containing the lat and lng coordinates
    * fields
    **/
-  getCityCoordinates(address) {
+  getCityCoordinates(cityAddress) {
     return module
       .init()
-      .then(places => places.search(address, { type: 'city' }))
+      .then(places => places.search(cityAddress, { type: 'city' }))
       .then(results => {
         const coordinates = get(results, 'hits[0]._geoloc');
         if (!coordinates) {

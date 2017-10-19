@@ -43,8 +43,24 @@ picture
 Example:
 
 ```javascript
-enrichr.twitter('dotcss').then(url => {
+enrichr.twitterPicture('dotcss').then(url => {
   // https://pbs.twimg.com/profile_images/659732196496928768/ByIcwqVt.png
+});
+```
+
+### cityCoordinates
+
+Takes a city address (in the form "Paris, France") and resolves to the lat/lng
+
+
+Example:
+
+```javascript
+enrichr.cityCoordinates('Paris, France').then(geoloc => {
+  // {
+  //   lat: 40.98987,
+  //   lng: -56.4976
+  // }
 });
 ```
 
