@@ -2,10 +2,10 @@
   "name": "enrichr",
   "version": "0.1.1",
   "description": "Utility belt to enrich Algolia records",
-  "main": "dist/index.js",
   "repository": "git@github.com:pixelastic/enrichr.git",
-  "author": "Pixelastic <tim@pixelastic.com>",
+  "bugs": "https://github.com/pixelastic/enrichr/issues",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "build": "./scripts/build",
     "lint": "./scripts/lint",

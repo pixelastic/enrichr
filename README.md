@@ -1,30 +1,28 @@
 # enrichr
 
-JavaScript module to enrich data.
+Quickly enrich your Algolia record with more data.
 
-Its primarily use-case is to enrich Algolia records. Give it a url, and it can
-give you back its number of shares on Facebook, or its OpenGraph data. Give it
-a city and country and it will give you its coordinates.
+The primary goal of this module is to enrich Algolia records with more data or
+data in a different format before pushing them. 
 
-## Usage
+Common use-cases might be getting the popularity of a url as a numeric value to
+use in `customRanking`, grabbing a screenshot of a webpage to use as part of the
+display, etc.
 
-```javascript
-import enrichr from 'enrichr';
+Those small tweaks we do often in various projects and demos. Having them all
+easy to access in one module will help us not duplicate the code on each project
+and build demos more quickly.
 
-enrichr.opengraph('https://www.algolia.com/').then(data => {
-  console.info(data);
-});
-```
+The project is still very much a WIP, but all feedback, issues, suggestions are
+more than welcome.
 
 ## Methods
 
 ### opengraph
 
-Takes an url as input, and will resolve with an object of the OpenGraph data.
-
-Example:
-
 ```javascript
+const data = await enrich.opengraph('http://www.algolia.com');
+
 { url: 'https://www.algolia.com/',
   site_name: 'Algolia',
   title: 'Algolia | The Most Reliable Platform for Building Search',
@@ -35,34 +33,6 @@ Example:
      height: '500' } }
 ```
 
-### twitterPicture
-
-Takes a twitter account name as input, and will resolve with the url of profile
-picture
-
-Example:
-
-```javascript
-enrichr.twitterPicture('dotcss').then(url => {
-  // https://pbs.twimg.com/profile_images/659732196496928768/ByIcwqVt.png
-});
-```
-
-### cityCoordinates
-
-Takes a city address (in the form "Paris, France") and resolves to the lat/lng
-
-
-Example:
-
-```javascript
-enrichr.cityCoordinates('Paris, France').then(geoloc => {
-  // {
-  //   lat: 40.98987,
-  //   lng: -56.4976
-  // }
-});
-```
 
 ## TODO
 
